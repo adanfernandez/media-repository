@@ -4,15 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
 import { GuardsComponent } from './guards/guards.component';
 
+/* IMPORTS DE PRIMENG*/
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
   declarations: [BreadcumbsComponent, GuardsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    InputTextModule
   ],
   exports: [
-    FormsModule
+    FormsModule,
+    InputTextModule
   ]
 })
 export class SharedModule { }
