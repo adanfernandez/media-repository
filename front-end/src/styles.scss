@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.p-float-label {
+    margin-bottom: 2%;
+    margin-top: 1%;
+}
+
+.container-center {
+    width: 50%;
+    left: 30%;
+    position: fixed;
+    margin-top: 10%;
+}
+
+.p-card-content,
+.p-card-title {
+    left: 40%;
+    position: relative;
+}

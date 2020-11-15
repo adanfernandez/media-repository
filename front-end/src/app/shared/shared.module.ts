@@ -6,17 +6,22 @@ import { GuardsComponent } from './guards/guards.component';
 
 /* IMPORTS DE PRIMENG*/
 import {InputTextModule} from 'primeng/inputtext';
-
+import {CardModule} from 'primeng/card';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [BreadcumbsComponent, GuardsComponent],
   imports: [
     CommonModule,
-    InputTextModule
+    InputTextModule,
+    CardModule,
+    ButtonModule
   ],
   exports: [
     FormsModule,
-    InputTextModule
+    InputTextModule,
+    CardModule,
+    ButtonModule
   ]
 })
 export class SharedModule { }
