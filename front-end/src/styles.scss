@@ -15,3 +15,23 @@
     left: 40%;
     position: relative;
 }
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+}
+
+.main-menu {
+    float: left;
+    margin-right: 5%;
+}
