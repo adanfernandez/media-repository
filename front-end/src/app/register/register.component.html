@@ -1,8 +1,10 @@
-<div class="container-center">
+<div [formGroup]="registerFormService.registerForm" class="container-center">
     <p-card header="Registro de usuario">
         <div>
             <span class="p-float-label">
-            <input type="text" id="email" pInputText>
+            <input type="text" id="email"
+            formControlName="email"
+            pInputText>
             <label for="email">Email: </label>
         </span>
         </div>
