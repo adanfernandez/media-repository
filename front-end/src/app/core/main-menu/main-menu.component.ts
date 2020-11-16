@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { CommonUrls } from '../../shared/common-urls';
 
 @Component({
   selector: 'app-main-menu',
@@ -14,10 +15,10 @@ export class MainMenuComponent implements OnInit {
 
   ngOnInit() {
       this.items = [{
-          label: 'Navegación',
+          label: 'Menú',
           items: [
-              {label: 'home', icon: 'pi pi-home'},
-              {label: 'login', icon: 'pi pi-sign-in'}
+              {label: 'Login', icon: 'pi pi-sign-in', url: CommonUrls.LOGIN},
+              {label: 'Registro', icon: 'pi pi-user-plus', url: CommonUrls.REGISTER}
           ]
       }];
   }

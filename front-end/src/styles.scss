@@ -1,13 +1,13 @@
 .p-float-label {
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     margin-top: 1%;
 }
 
 .container-center {
-    width: 50%;
-    left: 30%;
+    width: 55%;
+    left: 25%;
     position: fixed;
-    margin-top: 10%;
+    margin-top: 4%;
 }
 
 .p-card-content,
@@ -34,4 +34,10 @@ footer {
 .main-menu {
     float: left;
     margin-right: 5%;
+}
+
+.title-header {
+    cursor: pointer;
+    background-color: black;
+    color: white;
 }
