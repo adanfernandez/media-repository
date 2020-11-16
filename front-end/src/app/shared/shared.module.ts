@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BreadcumbsComponent } from './breadcumbs/breadcumbs.component';
 import { GuardsComponent } from './guards/guards.component';
+import { HttpClientModule } from '@angular/common/http';
 
 /* IMPORTS DE PRIMENG*/
 import {InputTextModule} from 'primeng/inputtext';
@@ -17,7 +18,8 @@ import {MenuModule} from 'primeng/menu';
     InputTextModule,
     CardModule,
     ButtonModule,
-    MenuModule
+    MenuModule,
+    HttpClientModule
   ],
   exports: [
     FormsModule,
