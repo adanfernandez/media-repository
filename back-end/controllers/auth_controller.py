@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, Response, jsonify
 from flask_cors import cross_origin
 from use_cases.auth_use_case import Auth_use_case
 
@@ -11,9 +11,11 @@ routes = Blueprint('auth', __name__, url_prefix='/auth')
 def register_user():
     """POST method to register a user"""
     value_return = auth_use_case.do_register()
-    return {
+    result = {
         'auth': value_return['auth'],
         'email': value_return['email'],
         'token': value_return['token'],
-        'code': 201
     }
+    return jsonify(result), 201
+
+
