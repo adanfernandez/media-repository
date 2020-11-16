@@ -14,17 +14,10 @@ export class MainMenuComponent implements OnInit {
 
   ngOnInit() {
       this.items = [{
-          label: 'File',
+          label: 'Navegación',
           items: [
-              {label: 'New', icon: 'pi pi-fw pi-plus'},
-              {label: 'Download', icon: 'pi pi-fw pi-download'}
-          ]
-      },
-      {
-          label: 'Edit',
-          items: [
-              {label: 'Add User', icon: 'pi pi-fw pi-user-plus'},
-              {label: 'Remove User', icon: 'pi pi-fw pi-user-minus'}
+              {label: 'home', icon: 'pi pi-home'},
+              {label: 'login', icon: 'pi pi-sign-in'}
           ]
       }];
   }
