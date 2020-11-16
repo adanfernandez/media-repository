@@ -17,7 +17,8 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    this.registerService?.register(null).subscribe(
+    const data = this.registerFormService.registerForm.value;
+    this.registerService?.register(data).subscribe(
         res => {
           this.router.navigateByUrl('/home');
         }

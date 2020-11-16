@@ -20,7 +20,22 @@ export class RegisterFormService {
             email: new FormControl(null, [Validators.required, CustomValidators.emailValidator]),
             password: new FormControl(null, [Validators.required]),
             passwordConfirmation: new FormControl(null, [Validators.required]),
-          }
-        );
+          },
+          CustomValidators.fieldsEquals(['password', 'passwordConfirmation'], ['passwordConfirmation'])
+          );
+        this.registerForm.updateValueAndValidity();
+    }
+
+    get email() {
+        return this?.registerForm?.get('email');
       }
+
+      get password() {
+        return this?.registerForm?.get('password');
+      }
+
+      get passwordConfirmation() {
+        return this?.registerForm?.get('passwordConfirmation');
+      }
+
 }
