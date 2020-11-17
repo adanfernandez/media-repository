@@ -43,7 +43,6 @@ export class CustomValidators {
       /////////////////////////////////////////////////////////////////////////
       //                                                                     //
       //                                                                     //
-      //                                                                     //
       //                       VALIDACIONES DE CONTROLS                      //
       //                                                                     //
       //                                                                     //
@@ -54,17 +53,15 @@ export class CustomValidators {
      * @param control a validar
      */
     public static emailValidator(control: AbstractControl): { [key: string]: boolean } | null {
-    if (!control.value || control.value === '') {
-        return;
-    } else {
-        if (CustomValidators.isEmail(control.value)) {
-            return null;
-        }
+      if (!control.value || control.value === '') {
+          return;
+      } else {
+          if (CustomValidators.isEmail(control.value)) {
+              return null;
+          }
+      }
+      return { email: true };
     }
-    return { email: true };
-    }
-
-    
 
 
     /**

@@ -2,11 +2,24 @@
     <p-card header="Registro de usuario">
         <div>
             <span class="p-float-label">
-            <input type="text" id="email"
-            formControlName="email"
-            pInputText>
-            <label for="email">Email: </label>
-        </span>
+                <input type="text" id="email"
+                formControlName="email"
+                pInputText>
+                <label for="email">Email: </label>
+
+
+                <app-validation-error [control]="registerFormService.email" [touched]="registerFormService.email.touched" [errors]="registerFormService.email?.errors" [validations]="registerFormService.validationsEmail">
+
+                </app-validation-error>
+ <!--               <span class="text-danger"
+                    *ngIf="registerFormService.email.touched && registerFormService.email.errors?.required">
+                    Email is required
+                </span>
+            <span class="text-danger" *ngIf="registerFormService.email.touched && registerFormService.email.errors?.email">
+                            Enter a valid email address
+                    </span>-->
+            </span>
+            <app-validation-error></app-validation-error>
         </div>
         <div>
             <span class="p-float-label">

@@ -5,12 +5,14 @@ import { CustomValidators } from 'src/app/utils/custom-validators';
 @Injectable()
 export class RegisterFormService {
     public registerForm: FormGroup;
-    public validationsEmail = { required: 'El email es un campo obligatorio',
-        email: 'El email introducido no es correcto'
+    public validationsEmail = {
+      required: 'El email es un campo obligatorio',
+      email: 'El email introducido no es correcto'
     };
-    public validationsPassword = { required: 'La contraseña es un campo obligatorio',
-        password: 'La contraseña debe tener entre 8 y 16 caracteres y, al menos, un número y una mayúscula',
-        passwordConfirmation: 'Las contraseñas deben de coincidir'
+    public validationsPassword = {
+      required: 'La contraseña es un campo obligatorio',
+      password: 'La contraseña debe tener entre 8 y 16 caracteres y, al menos, un número y una mayúscula',
+      passwordConfirmation: 'Las contraseñas deben de coincidir'
     };
 
     constructor() {}
@@ -28,15 +30,14 @@ export class RegisterFormService {
     }
 
     get email() {
-        return this?.registerForm?.get('email');
-      }
+      return this?.registerForm?.get('email');
+    }
 
-      get password() {
-        return this?.registerForm?.get('password');
-      }
+    get password() {
+      return this?.registerForm?.get('password');
+    }
 
-      get passwordConfirmation() {
-        return this?.registerForm?.get('passwordConfirmation');
-      }
-
+    get passwordConfirmation() {
+      return this?.registerForm?.get('passwordConfirmation');
+    }
 }

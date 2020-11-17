@@ -10,9 +10,10 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {MenuModule} from 'primeng/menu';
+import {ValidationErrorComponent} from './validation-error/validation-error.component';
 
 @NgModule({
-  declarations: [BreadcumbsComponent, GuardsComponent],
+  declarations: [BreadcumbsComponent, GuardsComponent, ValidationErrorComponent],
   imports: [
     CommonModule,
     InputTextModule,
@@ -26,7 +27,8 @@ import {MenuModule} from 'primeng/menu';
     InputTextModule,
     CardModule,
     ButtonModule,
-    MenuModule
+    MenuModule,
+    ValidationErrorComponent
   ]
 })
 export class SharedModule { }
