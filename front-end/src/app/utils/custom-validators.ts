@@ -3,6 +3,9 @@ import { FormGroup, AbstractControl, ValidatorFn } from '@angular/forms';
 export class CustomValidators {
 
     public static EMAIL_PATTERN: RegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    public static PASSWORD_PATTERN: RegExp = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+
+
 
     /**
      * Método para comprobar si un email tiene la estructura correcta.
@@ -18,6 +21,35 @@ export class CustomValidators {
     }
 
     /**
+     * Método para comprobar si texto pasado tiene complejidad suficiente para actuar como contraseña
+     * @param password a validar
+     */
+    public static checkComplexity(password: string): boolean {
+      if (password) {
+          const passwordString = password.toString();
+          const passwordRexp = this.PASSWORD_PATTERN;
+          return passwordRexp.test(passwordString);
+      }
+      return true;
+      }
+
+
+
+
+
+
+
+
+      /////////////////////////////////////////////////////////////////////////
+      //                                                                     //
+      //                                                                     //
+      //                                                                     //
+      //                       VALIDACIONES DE CONTROLS                      //
+      //                                                                     //
+      //                                                                     //
+      /////////////////////////////////////////////////////////////////////////
+
+    /**
      * Método para comprobar que un control cumple la validación de que su value sea un email.
      * @param control a validar
      */
@@ -31,6 +63,26 @@ export class CustomValidators {
     }
     return { email: true };
     }
+
+    
+
+
+    /**
+     * Método para comprobar que un control cumple la validación de que su value tenga uan complejidad mínima para actuar como contraseña.
+     * @param control a validar
+     */
+    public static passwordValidator(control: AbstractControl): { [key: string]: boolean } | null {
+      if (!control.value || control.value === '') {
+          return;
+      } else {
+          if (CustomValidators.checkComplexity(control.value)) {
+              return null;
+          }
+      }
+      return { password: true };
+    }
+
+
 
 
     public static fieldsEquals(fields: string[], fieldError) {

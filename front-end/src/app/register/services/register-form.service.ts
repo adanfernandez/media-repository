@@ -9,6 +9,7 @@ export class RegisterFormService {
         email: 'El email introducido no es correcto'
     };
     public validationsPassword = { required: 'La contraseña es un campo obligatorio',
+        password: 'La contraseña debe tener entre 8 y 16 caracteres y, al menos, un número y una mayúscula',
         passwordConfirmation: 'Las contraseñas deben de coincidir'
     };
 
@@ -18,7 +19,7 @@ export class RegisterFormService {
         this.registerForm = new FormGroup(
           {
             email: new FormControl(null, [Validators.required, CustomValidators.emailValidator]),
-            password: new FormControl(null, [Validators.required]),
+            password: new FormControl(null, [Validators.required, CustomValidators.passwordValidator]),
             passwordConfirmation: new FormControl(null, [Validators.required]),
           },
           CustomValidators.fieldsEquals(['password', 'passwordConfirmation'], ['passwordConfirmation'])
