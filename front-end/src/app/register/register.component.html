@@ -6,20 +6,11 @@
                 formControlName="email"
                 pInputText>
                 <label for="email">Email: </label>
-
-
-                <app-validation-error [control]="registerFormService.email" [touched]="registerFormService.email.touched" [errors]="registerFormService.email?.errors" [validations]="registerFormService.validationsEmail">
-
-                </app-validation-error>
- <!--               <span class="text-danger"
-                    *ngIf="registerFormService.email.touched && registerFormService.email.errors?.required">
-                    Email is required
-                </span>
-            <span class="text-danger" *ngIf="registerFormService.email.touched && registerFormService.email.errors?.email">
-                            Enter a valid email address
-                    </span>-->
+                <div>
+                    <app-validation-error [control]="registerFormService.email" [touched]="registerFormService.email.touched" [errors]="registerFormService.email?.errors" [validations]="registerFormService.validationsEmail">
+                    </app-validation-error>
+                </div>
             </span>
-            <app-validation-error></app-validation-error>
         </div>
         <div>
             <span class="p-float-label">
@@ -27,6 +18,10 @@
             formControlName="password"
             pInputText> 
             <label for="password">Contraseña: </label>
+            <div>
+                <app-validation-error [control]="registerFormService.password" [touched]="registerFormService.password.touched" [errors]="registerFormService.password?.errors" [validations]="registerFormService.validationsPassword">
+                </app-validation-error>
+            </div>
         </span>
         </div>
         <div>
@@ -34,7 +29,11 @@
             <input type="password" id="passwordConfirmation"
             formControlName="passwordConfirmation"
             pInputText> 
-            <label for="password">Confirmación de la contraseña: </label>
+            <label for="passwordConfirmation">Confirmación de la contraseña: </label>
+            <div>
+                <app-validation-error [control]="registerFormService.passwordConfirmation" [touched]="registerFormService.passwordConfirmation.touched" [errors]="registerFormService.passwordConfirmation?.errors" [validations]="registerFormService.validationsPasswordConfirmation">
+                </app-validation-error>
+            </div>
         </span>
         </div>
         <button pButton type="submit" label="Registro" class="p-button-rounded" (click)="register()" [disabled]="!registerFormService.registerForm.valid"></button>

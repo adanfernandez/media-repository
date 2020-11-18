@@ -2,3 +2,4 @@
 *.pyc
 back-end/venv/
 back-end/.idea
+front-end/debug.log

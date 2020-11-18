@@ -100,6 +100,7 @@ export class CustomValidators {
     }
 
     private static getError(errorName: string, condicionError: boolean, formGroup: FormGroup, fieldsError: string[]) {
+        const error = {};
         if (!condicionError) {
           for (const field of fieldsError) {
             const formControl = formGroup.get(field);
@@ -113,11 +114,11 @@ export class CustomValidators {
         } else {
           for (const field of fieldsError) {
             const formControl = formGroup.get(field);
-            formControl.setErrors({});
-            // Marcamos el formulario como que el usuario ha interactuado con él
+            error[errorName] = true;
+            formControl.setErrors(error);
             formControl.markAsDirty();
           }
         }
-        return null;
+        return error;
       }
 }
