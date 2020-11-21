@@ -1,5 +1,5 @@
 import flask
-from controllers import auth_controller
+from controllers.rest import auth_controller
 import os
 from flask_bcrypt import Bcrypt
 

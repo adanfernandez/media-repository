@@ -1,6 +1,6 @@
-from flask import Blueprint, Response, jsonify
+from flask import Blueprint, jsonify
 from flask_cors import cross_origin
-from use_cases.auth_use_case import Auth_use_case
+from core.use_cases.auth_use_case import Auth_use_case
 
 
 auth_use_case = Auth_use_case()
